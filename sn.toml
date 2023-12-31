@@ -1,0 +1,5 @@
+
+[package]
+name = "rgb"
+main = "src/lib.sn"
+version = "0.0.1"

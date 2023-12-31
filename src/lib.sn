@@ -1,0 +1,248 @@
+
+/**
+ * @brief A representation of a color in the RGB color space.
+ * 
+ * The `RGB` class encapsulates the essential attributes of a color, defining it in the Red, Green, and Blue (RGB) color space.
+ * Each instance of this class represents a unique color by storing its individual components: red, green, and blue.
+ * The class is particularly useful in graphics programming, user interface design, and other applications
+ * where precise control over colors is essential. Users can create, manipulate, and retrieve RGB colors
+ * through the methods and properties provided by this class.
+ * 
+ * @remark The RGB color space is an additive color model, where colors are created by combining varying intensities
+ * of red, green, and blue light. The class follows this model by providing attributes for the red, green, and blue
+ * components, allowing users to define colors with a high degree of precision.
+ * 
+ * ```snowball
+ * // Creating an instance of RGB and setting its components.
+ * let myColor = new RGB(255, 0, 128);
+ * 
+ * // Accessing individual components.
+ * let redComponent = myColor.red;
+ * let greenComponent = myColor.green;
+ * let blueComponent = myColor.blue;
+ * 
+ * // Modifying components to create a new color.
+ * myColor.green = 200;
+ * ```
+ * 
+ * @note This class assumes that color component values are in the standard range of 0 to 255.
+ * 
+ * For tasks involving color manipulation, blending, or representation, the `RGB` class provides
+ *  a robust foundation for creating and managing colors within the RGB color space.
+ */
+public class RGB implements ToString, Debug, Clone<RGB> {
+  /**
+   * @brief The amount of red in the color.
+   *
+   * The `red` property represents the amount of red in the color, as a value between 0 and 255.
+   * The value of this property is an integer.
+   *
+   * @note This property assumes that color component values are in the standard range of 0 to 255.
+   */
+  let red: u8;
+  /**
+   * @brief The amount of green in the color.
+   *
+   * The `green` property represents the amount of green in the color, as a value between 0 and 255.
+   * The value of this property is an integer.
+   *
+   * @note This property assumes that color component values are in the standard range of 0 to 255.
+   */
+  let green: u8;
+  /**
+   * @brief The amount of blue in the color.
+   *
+   * The `blue` property represents the amount of blue in the color, as a value between 0 and 255.
+   * The value of this property is an integer.
+   *
+   * @note This property assumes that color component values are in the standard range of 0 to 255.
+   */
+  let blue: u8;
+
+ public:
+  /**
+   * @brief Creates a new instance of the `RGB` class.
+   *
+   * The `RGB` class provides a representation of a color in the RGB color space.
+   * Each instance of this class represents a unique color by storing its individual components: red, green, and blue.
+   * The class is particularly useful in graphics programming, user interface design, and other applications
+   * where precise control over colors is essential. Users can create, manipulate, and retrieve RGB colors
+   * through the methods and properties provided by this class.
+   *
+   * @param red The amount of red in the color, as a value between 0 and 255.
+   * @param green The amount of green in the color, as a value between 0 and 255.
+   * @param blue The amount of blue in the color, as a value between 0 and 255.
+   *
+   * @note This class assumes that color component values are in the standard range of 0 to 255.
+   */
+  RGB(red: u8, green: u8, blue: u8)
+    : red(red), green(green), blue(blue) {}
+  /**
+   * @brief Creates a new instance of the `RGB` class with the default color black.
+   *
+   * The `RGB` class provides a representation of a color in the RGB color space.
+   * Each instance of this class represents a unique color by storing its individual components: red, green, and blue.
+   * The class is particularly useful in graphics programming, user interface design, and other applications
+   * where precise control over colors is essential. Users can create, manipulate, and retrieve RGB colors
+   * through the methods and properties provided by this class.
+   *
+   * @note This class assumes that color component values are in the standard range of 0 to 255.
+   */
+  RGB()
+    : red(0), green(0), blue(0) {}
+  /**
+   * @brief It returns the amount of red in the color.
+   *
+   * The `red` method returns the amount of red in the color, as a value between 0 and 255.
+   * The value of this method is an integer.
+   *
+   * @note This method assumes that color component values are in the standard range of 0 to 255.
+   */
+  @inline
+  func red() u8 { return self.red; }
+  /**
+   * @brief It returns the amount of green in the color.
+   *
+   * The `green` method returns the amount of green in the color, as a value between 0 and 255.
+   * The value of this method is an integer.
+   *
+   * @note This method assumes that color component values are in the standard range of 0 to 255.
+   */
+  @inline
+  func green() u8 { return self.green; }
+  /**
+   * @brief It returns the amount of blue in the color.
+   *
+   * The `blue` method returns the amount of blue in the color, as a value between 0 and 255.
+   * The value of this method is an integer.
+   *
+   * @note This method assumes that color component values are in the standard range of 0 to 255.
+   */
+  @inline
+  func blue() u8 { return self.blue; }
+  /**
+   * @brief It returns a string representation of the color.
+   *
+   * The `to_string` method returns a string representation of the color.
+   * The string representation is formatted as `RGB(red, green, blue)`.
+   *
+   * @returns A string representation of the color.
+   */
+  @inline
+  func to_string() String {
+    return "rgb(" + self.red.to_string() + ", " + self.green.to_string() + ", " + self.blue.to_string() + ")";
+  }
+  /**
+   * @brief It returns a debug representation of the color.
+   *
+   * The `debug` method returns a debug representation of the color.
+   * The debug representation is formatted as `RGB(red, green, blue)`.
+   * 
+   * @see `to_string`
+   * @returns A debug representation of the color.
+   */
+  @inline
+  func debug() String { return self.to_string(); }
+  /**
+   * @brief It returns a clone of the color.
+   *
+   * The `clone` method returns a clone of the color.
+   * The clone is a new instance of the `RGB` class with the same component values as the original.
+   *
+   * @returns A clone of the color.
+   */
+  @inline
+  func clone() RGB {
+    return new RGB(self.red, self.green, self.blue);
+  }
+  /**
+   * @brief It returns the hexadecimal representation of the color.
+   *
+   * The `to_hex` method returns the hexadecimal representation of the color.
+   * The hexadecimal representation is formatted as `#RRGGBB`.
+   *
+   * @returns A hexadecimal representation of the color.
+   */
+  @inline
+  func to_hex() String {
+    let mut redHex = self.red.hex();
+    let mut greenHex = self.green.hex();
+    let mut blueHex = self.blue.hex();
+    if (self.red < 16) {
+      redHex = "0" + redHex;
+    }
+    if (self.green < 16) {
+      greenHex = "0" + greenHex;
+    }
+    if (self.blue < 16) {
+      blueHex = "0" + blueHex;
+    }
+    return "#" + redHex + greenHex + blueHex;
+  }
+}
+
+/**
+  * @brief Black color represented in the RGB color space.
+  *
+  * The `black` function returns an instance of the `RGB` class that represents the color black.
+  * The color is defined in the RGB color space, with the following component values:
+  *
+  * - Red: 0
+  * - Green: 0
+  * - Blue: 0
+  *
+  * @note In hexadecimal notation, the value of this constant is `#000000`.
+  */
+public func black() RGB { return new RGB(0, 0, 0); }
+/**
+  * @brief White color represented in the RGB color space.
+  *
+  * The `white` function returns an instance of the `RGB` class that represents the color white.
+  * The color is defined in the RGB color space, with the following component values:
+  *
+  * - Red: 255
+  * - Green: 255
+  * - Blue: 255
+  *
+  * @note In hexadecimal notation, the value of this constant is `#FFFFFF`.
+  */
+public func white() RGB { return new RGB(255, 255, 255); }
+/**
+  * @brief Red color represented in the RGB color space.
+  *
+  * The `red` function returns an instance of the `RGB` class that represents the color red.
+  * The color is defined in the RGB color space, with the following component values:
+  *
+  * - Red: 255
+  * - Green: 0
+  * - Blue: 0
+  *
+  * @note In hexadecimal notation, the value of this constant is `#FF0000`.
+  */
+public func red() RGB { return new RGB(255, 0, 0); }
+/**
+  * @brief Green color represented in the RGB color space.
+  *
+  * The `green` function returns an instance of the `RGB` class that represents the color green.
+  * The color is defined in the RGB color space, with the following component values:
+  *
+  * - Red: 0
+  * - Green: 255
+  * - Blue: 0
+  *
+  * @note In hexadecimal notation, the value of this constant is `#00FF00`.
+  */
+public func green() RGB { return new RGB(0, 255, 0); }
+/**
+  * @brief Blue color represented in the RGB color space.
+  *
+  * The `blue` function returns an instance of the `RGB` class that represents the color blue.
+  * The color is defined in the RGB color space, with the following component values:
+  *
+  * - Red: 0
+  * - Green: 0
+  * - Blue: 255
+  *
+  * @note In hexadecimal notation, the value of this constant is `#0000FF`.
+  */
+public func blue() RGB { return new RGB(0, 0, 255); }

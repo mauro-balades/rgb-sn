@@ -1,0 +1,72 @@
+
+import pkg::lib;
+@use_macros
+import std::asserts;
+
+@cfg(tests)
+namespace tests {
+
+@test
+func create_rgb() i32 {
+    let rgb = new lib::RGB(1, 2, 3);
+    assert!(rgb.red() == 1);
+    assert!(rgb.green() == 2);
+    assert!(rgb.blue() == 3);
+    return true;
+}
+
+
+@test
+func to_hex() i32 {
+    let rgb = new lib::RGB(1, 2, 3);
+    assert!(rgb.to_hex() == "#010203");
+    return true;
+}
+
+@test
+func black() i32 {
+    let rgb = lib::black();
+    assert!(rgb.red() == 0);
+    assert!(rgb.green() == 0);
+    assert!(rgb.blue() == 0);
+    return true;
+}
+
+@test
+func white() i32 {
+    let rgb = lib::white();
+    assert!(rgb.red() == 255);
+    assert!(rgb.green() == 255);
+    assert!(rgb.blue() == 255);
+    return true;
+}
+
+@test
+func red() i32 {
+    let rgb = lib::red();
+    assert!(rgb.red() == 255);
+    assert!(rgb.green() == 0);
+    assert!(rgb.blue() == 0);
+    return true;
+}
+
+@test
+func green() i32 {
+    let rgb = lib::green();
+    assert!(rgb.red() == 0);
+    assert!(rgb.green() == 255);
+    assert!(rgb.blue() == 0);
+    return true;
+}
+
+@test
+func blue() i32 {
+    let rgb = lib::blue();
+    assert!(rgb.red() == 0);
+    assert!(rgb.green() == 0);
+    assert!(rgb.blue() == 255);
+    return true;
+}
+
+}
+
