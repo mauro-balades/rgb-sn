@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>rgb::lib::RGB</title>
+    <link rel="stylesheet" href="https://snowball-lang.github.io/autodoc-styles/styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://snowball-lang.github.io/autodoc-styles/md2html.js"></script>
+
+    <script src="https://snowball-lang.github.io/autodoc-styles/highlight.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <base href="/rgb/">
+</head>
+<body>
+    <sidenav>
+        <h1 style="display: flex; align-items: center;">
+            rgb::lib <span class="tag">version 0.0.1</span>
+        </h1>
+        <hr />
+        <a href="rgb/lib.html">&lt; Go Back</a> <a href="rgb/lib/RGB/blue.html">&gt; blue</a> <a href="rgb/lib/RGB/clone.html">&gt; clone</a> <a href="rgb/lib/RGB/-constructor.html">&gt; constructor</a> <a href="rgb/lib/RGB/-constructor-2.html">&gt; constructor(2)</a> <a href="rgb/lib/RGB/debug.html">&gt; debug</a> <a href="rgb/lib/RGB/green.html">&gt; green</a> <a href="rgb/lib/RGB/red.html">&gt; red</a> <a href="rgb/lib/RGB/to_hex.html">&gt; to_hex</a> <a href="rgb/lib/RGB/to_string.html">&gt; to_string</a> 
+    </sidenav>
+    <main>
+        <h1><a style="color:rgb(14 116 144);" href="rgb.html">rgb</a>::<a style="color:rgb(14 116 144);" href="rgb/lib.html">lib</a>::<a style="color:rgb(14 116 144);" href="rgb/lib/RGB.html">RGB</a>;</h1><hr/><div><pre><code class="language-snowball">public class RGB
+    implements ToString, Debug, Clone&lt;RGB&gt; {
+  private:
+    // ... private fields
+};</code></pre></div><br><div class="doc"><h1 style="color:rgb(14 116 144);">Brief Description for <quote>RGB</quote></h1><p><br/>A representation of a color in the RGB color space.</p><p><br/> <br/> The `RGB` class encapsulates the essential attributes of a color, defining it in the Red, Green, and Blue (RGB) color space.<br/> Each instance of this class represents a unique color by storing its individual components: red, green, and blue.<br/> The class is particularly useful in graphics programming, user interface design, and other applications<br/> where precise control over colors is essential. Users can create, manipulate, and retrieve RGB colors<br/> through the methods and properties provided by this class.<br/> <br/> of red, green, and blue light. The class follows this model by providing attributes for the red, green, and blue<br/> components, allowing users to define colors with a high degree of precision.<br/> <br/> ```snowball<br/> // Creating an instance of RGB and setting its components.<br/> let myColor = new RGB(255, 0, 128);<br/> <br/> // Accessing individual components.<br/> let redComponent = myColor.red;<br/> let greenComponent = myColor.green;<br/> let blueComponent = myColor.blue;<br/> <br/> // Modifying components to create a new color.<br/> myColor.green = 200;<br/> ```<br/> <br/> <br/> For tasks involving color manipulation, blending, or representation, the `RGB` class provides<br/>  a robust foundation for creating and managing colors within the RGB color space.<br/> </p><hr/><h1 style="color:rgb(14 116 144);">Public Functions</h1><pre><code style="background: transparent !important; padding: 5px 0 !important;" class="language-snowball">public func red() u8 { ... }</code></pre><p style="margin-left: 15px; margin-bottom: 20px; margin-top: 10px;"><br/>It returns the amount of red in the color.</p><hr style="margin-bottom: 30px;"/><pre><code style="background: transparent !important; padding: 5px 0 !important;" class="language-snowball">public func green() u8 { ... }</code></pre><p style="margin-left: 15px; margin-bottom: 20px; margin-top: 10px;"><br/>It returns the amount of green in the color.</p><hr style="margin-bottom: 30px;"/><pre><code style="background: transparent !important; padding: 5px 0 !important;" class="language-snowball">public func blue() u8 { ... }</code></pre><p style="margin-left: 15px; margin-bottom: 20px; margin-top: 10px;"><br/>It returns the amount of blue in the color.</p><hr style="margin-bottom: 30px;"/><pre><code style="background: transparent !important; padding: 5px 0 !important;" class="language-snowball">public func to_string() String { ... }</code></pre><p style="margin-left: 15px; margin-bottom: 20px; margin-top: 10px;"><br/>It returns a string representation of the color.</p><hr style="margin-bottom: 30px;"/><pre><code style="background: transparent !important; padding: 5px 0 !important;" class="language-snowball">public func debug() String { ... }</code></pre><p style="margin-left: 15px; margin-bottom: 20px; margin-top: 10px;"><br/>It returns a debug representation of the color.</p><hr style="margin-bottom: 30px;"/><pre><code style="background: transparent !important; padding: 5px 0 !important;" class="language-snowball">public func clone() RGB { ... }</code></pre><p style="margin-left: 15px; margin-bottom: 20px; margin-top: 10px;"><br/>It returns a clone of the color.</p><hr style="margin-bottom: 30px;"/><pre><code style="background: transparent !important; padding: 5px 0 !important;" class="language-snowball">public func to_hex() String { ... }</code></pre><p style="margin-left: 15px; margin-bottom: 20px; margin-top: 10px;"><br/>It returns the hexadecimal representation of the color.</p><hr style="margin-bottom: 30px;"/><h1 style="color:rgb(14 116 144);">Public Static Functions</h1><pre><code style="background: transparent !important; padding: 5px 0 !important;" class="language-snowball">mut public static operator func constructor(
+    red: u8,
+    green: u8,
+    blue: u8
+) void { ... }</code></pre><pre><code style="background: transparent !important; padding: 5px 0 !important;" class="language-snowball">mut public static operator func constructor() void { ... }</code></pre><br/><br/><br/></div>
+    </main>
+</body>
+</html>
